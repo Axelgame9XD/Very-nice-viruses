@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>c00lV1rus</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background-image: url('Screenshot 2025-08-12 17.14.51.png');
+    background-size: cover;
+    background-position: center;
+    cursor: none; /* Esconde o cursor */
+  }
+</style>
+</head>
+<body>
+
+<!-- Música que toca automaticamente -->
+<audio autoplay loop>
+  <source src="gemido-whatsapp.mp3" type="audio/mpeg" />
+  
+</audio>
+
+<script>
+  // Lista de imagens de fundo
+  const imagens = ['Screenshot 2025-08-12 17.14.51.png', 'Screenshot 2025-08-12 17.15.02.png'];
+  let indice = 0;
+
+  // Função para alternar a imagem de fundo
+  function alternarImagem() {
+    indice = (indice + 1) % imagens.length; // Vai para a próxima imagem, volta ao início
+    document.body.style.backgroundImage = `url('${imagens[indice]}')`;
+  }
+
+  // Troca a imagem a cada 5 segundos (5000 milissegundos)
+  setInterval(alternarImagem, 500);
+</script>
+
+</body>
+</html>
+
+
+
+
+
