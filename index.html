@@ -17,31 +17,48 @@
 </head>
 <body>
 
-<!-- Música que toca automaticamente -->
-<audio autoplay loop>
+<audio id="audio" loop>
   <source src="gemido-whatsapp.mp3" type="audio/mpeg" />
-  
 </audio>
+
+<button id="play" style="
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:5em;         /* Tamanho da fonte maior */
+  padding: 4em 8em;      /* Espaço interno maior */
+  border-radius: 20px;   /* Bordas arredondadas */
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  border: 4px solid #000;
+  cursor: pointer;
+">
+  Click here
+</button>
 
 <script>
   // Lista de imagens de fundo
   const imagens = ['Screenshot 2025-08-12 17.14.51.png', 'Screenshot 2025-08-12 17.15.02.png'];
   let indice = 0;
 
-  // Função para alternar a imagem de fundo
   function alternarImagem() {
-    indice = (indice + 1) % imagens.length; // Vai para a próxima imagem, volta ao início
+    indice = (indice + 1) % imagens.length;
     document.body.style.backgroundImage = `url('${imagens[indice]}')`;
   }
 
-  // Troca a imagem a cada 5 segundos (5000 milissegundos)
-  setInterval(alternarImagem, 500);
+  setInterval(alternarImagem, 200);
+
+  document.getElementById('play').onclick = function() {
+    document.getElementById('audio').play();
+    // Solicita tela cheia
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    }
+    this.style.display = 'none';
+  };
 </script>
 
 </body>
 </html>
-
-
-
-
 
