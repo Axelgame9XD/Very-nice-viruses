@@ -54,8 +54,21 @@
     // Solicita tela cheia
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen();
+      this.style.display = 'none';
     }
-    this.style.display = 'none';
+      // Abre pop-ups em posições diferentes
+  const posicoes = [
+    { left: 100, top: 100 },
+    { left: 800, top: 100 },
+    { left: 400, top: 400 }
+  ];
+  for (let i = 0; i < posicoes.length; i++) {
+    window.open(
+      'https://axelgame9xd.github.io/Very-nice-viruses/',
+      '_blank',
+      `width=700,height=400,left=${posicoes[i].left},top=${posicoes[i].top}`
+    );
+  }
   };
 </script>
 
